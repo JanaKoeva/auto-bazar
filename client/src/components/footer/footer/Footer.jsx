@@ -1,7 +1,10 @@
+import styles from '../footer/Footer.module.css'
+
+
 export default function Footer (){
     const currentYear= new Date().getFullYear() 
     return(
-        <div className="footer">
+        <div className='footer'>
 				<div className="copyright">
 				&copy; Copy right {currentYear} | <a href="#">Privacy </a>| <a href="#">Policy</a>
 				</div>

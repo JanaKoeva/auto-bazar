@@ -1,7 +1,8 @@
+import styles from '../header/Header.module.css'
 import { Link } from "react-router-dom"
 export default function Header(){
     return(
-        <div className="allcontain">
+        <div className={styles.allcontain}>
         <div className="header">
                 <ul className="socialicon">
                     <li><Link to="#"><i className="fa fa-facebook"></i></Link></li>
@@ -51,7 +52,7 @@ export default function Header(){
                         <Link to="/contact">CONTACT</Link>
      
                     </li>
-                    <button><span className="postnewcar"><Link to="/create" >POST NEW CAR</Link></span></button>
+                    <li className={styles.button}><span className="postnewcar " ><Link to="/create" >POST NEW CAR</Link></span></li>
                 </ul>
             </div>
         </nav>

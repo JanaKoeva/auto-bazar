@@ -1,0 +1,19 @@
+.button {
+    background: none;
+    background-color: none;
+    border: 2px solid #C59E47;
+    font-family: 'BebasNeue Regular';
+    margin-left: 60px;
+     font-size: 16.99px;
+     color: #313943;
+     padding-left: 19px;
+     padding-right: 19px;
+     padding-top: -2px;
+     padding-bottom:-2px;
+  
+
+}
+.button:hover{
+    background-color: #C59E47;
+    color: #fff;
+}

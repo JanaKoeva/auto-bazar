@@ -1,0 +1,29 @@
+.allcontain button {
+    background: none;
+    background-color: none;
+    border: 2px solid #C59E47;
+    font-family: 'BebasNeue Regular';
+    margin-left: 60px;
+     font-size: 16.99px;
+     color: #313943;
+     margin-top:0px;
+     padding-left: 19px;
+     padding-right: 19px;
+     padding-top: -2px;
+     padding-bottom:-2px;
+ 
+}
+
+.allcontain{
+    min-height: 80vh;
+}
+
+.newslettercontent{
+    align-items: center;
+    padding-top: 20em;
+}
+.contactForm{
+    background-color: red;
+    min-height: 500px;
+    padding-top: 50px;
+}
