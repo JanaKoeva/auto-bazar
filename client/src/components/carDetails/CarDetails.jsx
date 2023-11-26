@@ -7,56 +7,72 @@ import styles from '../carDetails/CarDetails.module.css'
 
 
 const FORM_KEYS = {
-	image: 'image',
-	text: 'text',
+    image: 'image',
+    text: 'text',
+    name: 'name'
 
 }
 
 const formInitialState = {
-	[FORM_KEYS.image]: '',
-	[FORM_KEYS.text]: '',
-	
+    [FORM_KEYS.image]: '',
+    [FORM_KEYS.text]: '',
+    [FORM_KEYS.name]: '',
+
 }
 
-	
+
 export default function CarDetails() {
     const { carId } = useParams();
     const [car, setCar] = useState({});
+    const [messages, setMessages] = useState([]);
     const makeInputRef = useRef();
-	const navigate = useNavigate();
-	const [formValues, setFormValues] = useState(formInitialState);
+    const navigate = useNavigate();
+    const [formValues, setFormValues] = useState(formInitialState);
 
-	useEffect(() => {
-		makeInputRef.current.focus();
-	}, [])
-	const changeHandler = (e) => {
-		setFormValues(state => ({
-			...state,
-			[e.target.name]: e.target.value
-		}))
-	};
+    useEffect(() => {
+        makeInputRef.current.focus();
+    }, [])
+    const changeHandler = (e) => {
+        setFormValues(state => ({
+            ...state,
+            [e.target.name]: e.target.value
+        }))
+    };
+    const changeHandlerText = (e) => {
+        setFormValues(state => ([
+            ...state,
+            e.target.value
+        ]))
+    };
     const resetFormHandler = () => {
-		setFormValues(formInitialState)
-	}
-	const postMesageSubmitHandler = async (e) => {
-		e.preventDefault();
-		const data = formValues
-		try {
-			await carService.create(data);
-			navigate(`/catalog/${carId}`)
-			resetFormHandler();
-		} catch (err) {
-			console.log(err);
-		}
-
-	}
-
+        setFormValues(formInitialState)
+    }
     useEffect(() => {
         carService.getOne(carId)
             .then(setCar);
-        console.log(car);
+
+        messageService.getAll()
+            .then(setMessages)
     }, [carId]);
-    console.log(car);
+
+    const postMesageSubmitHandler = async (e) => {
+        e.preventDefault();
+        const data = formValues;
+        try {
+            const newMessage = await messageService.create(carId, data.name, data.text);
+            console.log(newMessage);
+            setMessages(state => [...state, newMessage])
+            navigate(`/catalog/${carId}`)
+
+            resetFormHandler();
+        } catch (err) {
+            console.log(err);
+        }
+
+    }
+
+
+
     return (
 
         <div className={styles.details}>
@@ -89,16 +105,16 @@ export default function CarDetails() {
                                         <form onSubmit={postMesageSubmitHandler}>
                                             <img id="image_border" src="image/border.png" alt="border" />
                                             <div className="contact-form">
-                                            <img src="../../image/border.png" alt="border" />
+                                                <img src="../../image/border.png" alt="border" />
                                                 <h1>Post New Message</h1>
 
                                                 <div className="form-group group-coustume">
-
+                                                    <input type="text" onChange={changeHandler} name={FORM_KEYS.name} value={formValues.name} placeholder="Username" />
                                                     <textarea name={FORM_KEYS.text} rows="4" cols="50" className="message-form" placeholder="Write a message..."
                                                         ref={makeInputRef}
                                                         value={formValues.text}
                                                         onChange={changeHandler} />
-                                                    <button onClick={postMesageSubmitHandler } type="button" className="btn btn-default btn-submit">Post Message</button>
+                                                    <button onClick={postMesageSubmitHandler} type="button" className="btn btn-default btn-submit">Post Message</button>
                                                 </div>
 
                                             </div>
@@ -122,25 +138,36 @@ export default function CarDetails() {
                 </div>
 
             </div>
-            <div className="feturedsection">
-                <h1 className="text-center"><span className="bdots">&bull;</span>M E S S A G E S<span className="bdots">&bull; </span><br /></h1>
+           
+            
+                <div  className="feturedsection">
+                    <h1 className="text-center"><span className="bdots">&bull;</span>M E S S A G E S<span className="bdots">&bull; </span><br /></h1>
+                    {messages.map(({carId, text, userName, _id}) => (
+                    <>
+                        <div key={_id} className="row costumrow">
+                            <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6 img2colon">
+                                <img src="" alt="imageUrl" />
+                                <h3>{userName}</h3>
+                            </div>
+                            <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6 txt1colon ">
+                                <div className="featurecontant">
 
-                <div className="row costumrow">
-                    <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6 img2colon">
-                        <img src="" alt="imageUrl" />
-                        <h3>User Name</h3>
-                    </div>
-                    <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6 txt1colon ">
-                        <div className="featurecontant">
-
-                            <p>{car.text}</p>
+                                    <p>{text}</p>
 
 
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </div>
+                    </>
+))}
+                    {messages.length === 0 && (
+                        <h1 className="text-center"><span className="bdots">&bull;</span>N O  M E S S A G E S  Y E T<span className="bdots">&bull; </span><br /></h1>
 
+                    )}  
+ 
+                </div>
+                
+           
         </div>
 
 
