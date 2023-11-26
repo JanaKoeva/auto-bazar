@@ -1,0 +1,36 @@
+.CostumcolColborder1{
+
+    @media(min-width:1200px) {
+        /* .row firstrow {
+            max-width: 1400px;
+          
+        } */
+
+
+        .col-lg-6 costumcol colborder2{
+            flex: 1 1 auto;
+            justify-content: space-between;
+            margin: 0 2em;
+            display: block;
+            background-color: red;
+        }
+    }
+   
+}
+.rowCostumrow {
+    min-width: 1400px;
+    display: flex;
+    flex-direction: column;
+    /* flex: 0 1 auto; */
+    justify-content:space-around;
+    
+   
+}
+  
+.col-lg-6 costumcol colborder2{
+    flex: 1 1 auto;
+    justify-content: space-between;
+    margin: 0 2em;
+    display: block;
+    background-color: red;
+}

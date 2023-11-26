@@ -33,7 +33,7 @@ export default function Header(){
                         <span className="icon-bar"></span>
                     </button>
                     <Link className="navbar-brand logo" to="/"><img 
-                    // className={styles.logoBorder} 
+                    className={styles.logoBorder} 
                         src="image/logo2.png" alt="logo"/></Link>
                 </div>	 
             </div>

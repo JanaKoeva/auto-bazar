@@ -1,0 +1,8 @@
+.details{
+    display: flex;
+    flex-direction: column;
+}
+.feturedsection{
+    display: block;
+    flex:1 1 auto
+}

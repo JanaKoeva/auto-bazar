@@ -1,0 +1,21 @@
+.allcontain{
+    min-height: 100vh;
+    padding: 10em auto;
+}
+
+
+.allcontain a{
+    color: rgb(202, 183, 64);
+font-size: 1.2em;
+text-decoration: double;
+}
+.allcontain a:hover{
+color: rgb(202, 183, 64);
+cursor: pointer;
+font-size: 1.2em;
+
+}
+.contact-form{
+    position: relative;
+    padding-top: 10em;
+}

@@ -1,0 +1,36 @@
+{
+"304bca9e-c713-4e72-b686-6b67ff7bf110": {
+    "manufacturer": "WV",
+    "model": "GOLF",
+    "mileage": "123456",
+    "location": "Stara Zagora",
+    "price": "1200",
+    "image": "../../image/golf.png",
+    "text": "The Volkswagen Golf n is a compact car/small family car ",
+    "year": "1990",
+    "_id": "304bca9e-c713-4e72-b686-6b67ff7bf110"
+},
+"304bca9e-c713-4e72-b686-6b67ff7bf111": {
+    "manufacture": "Porsche",
+    "model": "Porsche 911 Turbo Cabriolet",
+    "mileage": "128000",
+    "location": "Stara Zagora",
+    "price": "50 000",
+    "image": "../../image/featurporch.jpg",
+    "text": "The most perfect sports car ever. Incredible performance, whilst being comfortable and fully suitable for everyday use",
+    "year": "1990",
+    "_id": "304bca9e-c713-4e72-b686-6b67ff7bf111"
+},
+"304bca9e-c713-4e72-b686-6b67ff7bf112": {
+    "manufacturer": "Alfa Romeo",
+    "model": "Alfa Romeo GT",
+    "mileage": "98000",
+    "location": "Stara Zagora",
+    "price": "19 800",
+    "image": "../../image/alfa.jpg",
+    "text": "Alfa Romeo GT was voted the world's most beautiful coupe in the annual 'World's Most Beautiful Automobile",
+    "year": "1990",
+    "_id": "304bca9e-c713-4e72-b686-6b67ff7bf112"
+}
+
+}
