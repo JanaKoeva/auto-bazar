@@ -51,7 +51,7 @@ export default function CarDetails() {
         carService.getOne(carId)
             .then(setCar);
 
-        messageService.getAll()
+        messageService.getAll(carId)
             .then(setMessages)
     }, [carId]);
 

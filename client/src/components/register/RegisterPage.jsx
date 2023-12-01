@@ -1,5 +1,26 @@
+import { useContext } from "react"
+import AuthContext from "../../context/authContext"
+import useForm from "../../hooks/useForm"
+
+
+
+const RegisterFormKeys={
+    Name:'username',
+    Email:'email',
+    Password:'password',
+    ConfirmPassword:'rePassword'
+}
 
 export default function RegisterPage(){
+    const {registerSubmitHandler}=useContext(AuthContext)
+    const {formValues ,onChange, onSubmit}=useForm(registerSubmitHandler,{
+        [RegisterFormKeys.Name]:'',
+        [RegisterFormKeys.Email]:'',
+        [RegisterFormKeys.Password]:'',
+        [RegisterFormKeys.ConfirmPassword]:'',
+
+    })
+    
     return(
      
    
@@ -7,13 +28,41 @@ export default function RegisterPage(){
             <div className="newslettercontent">
                 <div className="leftside">
                     <img id="image_border" src="image/border.png" alt="border" />
+                    <form onSubmit={onSubmit}>
                     <div className="contact-form">
                         <h1>Register</h1>
                         <div className="form-group group-coustume">
-                        <input type="text" className="form-control name-form" placeholder="Name" />
-                            <input type="text" className="form-control email-form" placeholder="E-mail" />
-                            <input type="password" className="form-control subject-form" placeholder="Password" />
-                            <input type="password" className="form-control subject-form" placeholder="RePassword" />
+                            <input 
+                            name={RegisterFormKeys.Name}
+                            value={formValues[RegisterFormKeys.Name]} 
+                            onChange={onChange} 
+                            type="text" 
+                            className="form-control name-form" 
+                            placeholder="Name"
+                             />
+                            <input 
+                            name={RegisterFormKeys.Email}
+                            value={formValues[RegisterFormKeys.Email]} 
+                            onChange={onChange} 
+                            type="text" 
+                            className="form-control email-form" 
+                            placeholder="E-mail" 
+                            />
+                            <input 
+                            name={RegisterFormKeys.Password}
+                            value={formValues[RegisterFormKeys.Password]} 
+                            onChange={onChange} 
+                            type="password" 
+                            className="form-control subject-form" 
+                            placeholder="Password" 
+                            />
+                            <input 
+                            name={RegisterFormKeys.ConfirmPassword}
+                            value={formValues[RegisterFormKeys.ConfirmPassword]} 
+                            onChange={onChange} 
+                            type="password" 
+                            className="form-control subject-form" 
+                            placeholder="Confirm Password" />
                             
                             
                             <button type="submit" className="btn btn-default btn-submit">Register</button>
@@ -24,6 +73,7 @@ export default function RegisterPage(){
 
                         </div>
                     </div>
+                    </form>
                 </div>
                 <div className="google-maps">
                     
