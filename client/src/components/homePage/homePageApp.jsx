@@ -8,13 +8,13 @@ export default function HomePage() {
   
 
   return (
-    <>
+    <div className={styles.newslettercontent} id="home">
     <Carousel/>
     <FeaturesCars/>
     <LatestCars/>
     <NewsLetters/>
   
-    </>
+    </div>
   )
 }
 

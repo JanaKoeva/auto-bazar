@@ -16,8 +16,8 @@ export default function NewsLetters() {
         
     }}>
                 <img src="image/border.png" alt="border" style={{position: 'relative'}}/>
-                <h1 style={{position: 'absolute'}}>NEWSLETTER</h1>
-                <p style={{position: 'absolute'}}>Subscribe to the COLLECTIONCARS mailing list to <br/>
+                <h1 id="newsteller" style={{marginTop: '5em'}}>NEWSLETTER</h1>
+                <p id="newsteller1" style={{marginTop: '12em'}}>Subscribe to the COLLECTIONCARS mailing list to <br/>
                         receive updates on new arrivals, special offers <br/>
                             and other discount information.
                 </p>

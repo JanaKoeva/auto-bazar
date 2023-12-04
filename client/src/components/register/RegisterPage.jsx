@@ -1,7 +1,7 @@
 import { useContext } from "react"
 import AuthContext from "../../context/authContext"
 import useForm from "../../hooks/useForm"
-
+import style from '../register/RegisterPage.module.css';
 
 
 const RegisterFormKeys={
@@ -24,14 +24,16 @@ export default function RegisterPage(){
     return(
      
    
-        <div className= 'allcontain' >
+        <div className= {style.allcontain}>
             <div className="newslettercontent">
                 <div className="leftside">
                     <img id="image_border" src="image/border.png" alt="border" />
                     <form onSubmit={onSubmit}>
                     <div className="contact-form">
                         <h1>Register</h1>
-                        <div className="form-group group-coustume">
+                        <div className="form-group group-coustume" 
+                        style={{paddingTop: "8em"}
+                        }>
                             <input 
                             name={RegisterFormKeys.Name}
                             value={formValues[RegisterFormKeys.Name]} 
@@ -76,6 +78,10 @@ export default function RegisterPage(){
                     </form>
                 </div>
                 <div className="google-maps">
+                <div className="rightside">
+                <img className="newsimage" src="image/newsletter.jpg" alt="newsletter"/>
+               
+            </div>
                     
 
                 </div>

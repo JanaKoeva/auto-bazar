@@ -1,8 +1,85 @@
 .details{
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
+    gap: 15em;
+    max-width: 1500px;
+    margin-left: 10em;
 }
 .feturedsection{
     display: block;
     flex:1 1 auto
+}
+.details .newslettercontent{
+    display: flex;
+    gap: 10em;
+    justify-content: space-around;
+}
+.details .img2colon{
+    flex: 1 1 auto;
+    margin-left: 10em;
+    /* display: flex;
+    flex-direction: row; */
+}
+.details .img2colon h1{
+
+    width: 30em;
+}
+.details #post{
+    padding-left: 10em;
+    font-family: "OpenSans-Light";
+    font-size: 41px;
+    /* padding-top: 100px;
+    padding-bottom: 50px; */
+    color: #747475;
+}
+.details.leftside{
+    width: 50%;
+}
+.details button {
+    background: none;
+    background-color: none;
+    border: 2px solid #C59E47;
+    font-family: 'BebasNeue Regular';
+    margin-left: 60px;
+    font-size: 16.99px;
+    color: #313943;
+    margin-top: 0px;
+    padding-left: 19px;
+    padding-right: 19px;
+    padding-top: -2px;
+    padding-bottom: -2px;
+
+}
+details .button:hover{
+    background-color: #C59E47;
+    color: #fff;
+}
+.details img #border{
+    transform: rotate(90deg);
+}
+
+details.rightside{
+    margin-left: 30em;
+  
+}
+.details #post{
+   
+    padding-left: 50em;
+
+}
+.details#newmessage {
+    background: none;
+    background-color: none;
+    border: 2px solid #C59E47;
+    font-family: 'BebasNeue Regular';
+    margin-left: 60px;
+    font-size: 16.99px;
+    color: #313943;
+    margin-top: 0px;
+    padding-left: 30px!important;
+    padding-right: 19px;
+    padding-top: -2px;
+    padding-bottom: -2px;
+
 }

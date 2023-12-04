@@ -1424,15 +1424,16 @@ left: 0%;
  		font-size: 26px;
  	}
  }
-@media screen and (max-width:1200px){
+@media screen and (max-width:850px){
 	.leftside>h1{
 		font-size: 16px;
-		top:25%;
+		top:5%;
 	}
 	.leftside>p{
 		font-size: 14px;
-		top:38%;
+		top:0%;
 		width: 30%;
+
 	}
 	.rightside>input{
 		font-size: 20px;
@@ -1442,6 +1443,28 @@ left: 0%;
 		letter-spacing: 3px;
 	}
 }
+@media screen and (max-width:1300px){
+	.leftside>h1{
+		font-size: 16px;
+		top:38%;
+		font-family: "OpenSans Regular";
+		font-weight: bold;
+	}
+	.leftside>p{
+		font-size: 14px;
+		top:40%;
+		width: 30%;
+
+	}
+	.rightside>input{
+		font-size: 20px;
+	}
+	.rightside>button{
+	 	font-size: 27px;
+		letter-spacing: 3px;
+	}
+}
+
 /*-------------------------------------End Newsletter Section ----------------*/	
 /*-------------------------------------Bottom Menu -----------------------------------------------*/
  .bottommenu{

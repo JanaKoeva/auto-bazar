@@ -97,10 +97,10 @@ export default function PostNewCar() {
 				<div className="newslettercontent">
 					<div className="leftside">
 						<form onSubmit={createNewCarSubmitHandler}>
-							<img id="image_border" src="image/border.png" alt="border" />
+						<h1>Post New Car</h1>
+							<img className="image" id="image_border" src="image/border.png" alt="border" />
 							<div className="contact-form">
-								<h1>Post New Car</h1>
-
+								
 								<div className="form-group group-coustume">
 
 									<input id='name' type="text" name={FORM_KEYS.make} className="form-control name-form" placeholder="Manufacturer"
@@ -136,6 +136,17 @@ export default function PostNewCar() {
 
 							</div>
 						</form>
+					</div>
+					<div className="google-maps">
+						<div className="rightside">
+						{/* {FORM_KEYS.image != "" &&
+						(<img className="newsimage" src={formValues.image} alt="newsletter" />)}
+						{FORM_KEYS.image == null && */}
+						(<img className="newsimage" src="image/newsletter.jpg" alt="newsletter" />)
+						{/* } */}
+							
+
+						</div>
 					</div>
 
 				</div>

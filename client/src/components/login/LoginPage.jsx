@@ -53,7 +53,10 @@ export default function LoginPage() {
                     </div>
                 </div>
                 <div className="google-maps">
+                    <div className="rightside">
+                        <img className="newsimage" src="image/newsletter.jpg" alt="newsletter" />
 
+                    </div>
 
                 </div>
             </div>

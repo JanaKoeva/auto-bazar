@@ -1,6 +1,6 @@
 import * as request from '../lib/request'
 
-const baseUrl = 'http://localhost:3030/jsonstore/cars';
+const baseUrl = 'http://localhost:3030/data/cars';
 
 //import Item from "./models/Item";
 // import mongoose from '../../node_modules/mongoose'
@@ -11,13 +11,13 @@ const baseUrl = 'http://localhost:3030/jsonstore/cars';
 //  });
 
 export const getAll = async () => {
-    const responce = await request.get(baseUrl);
-    return Object.values(responce);
+    const result = await request.get(baseUrl);
+    return result;
 }
+
 export const getOne = async (carId) => {
     const result = await request.get(`${baseUrl}/${carId}`);
-    return result;
-   
+    return result;  
 }
 
 export const create = async (data) => {
