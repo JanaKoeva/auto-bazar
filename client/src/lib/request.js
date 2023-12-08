@@ -8,6 +8,7 @@ const buildOptions = (data) => {
         }
     }
     const token = localStorage.getItem('accessToken');
+    
     if (token) {
         options.headers = {
             ...options.headers,
@@ -26,14 +27,14 @@ const request = async (method, url, data) => {
             ...buildOptions(data)
         }
     )
-    console.log(responce);
+   
 
     if (responce.status === 204) {
         return {};
     }
 
     const result = await responce.json();
-
+  
 
     if (!responce.ok) {
         throw result

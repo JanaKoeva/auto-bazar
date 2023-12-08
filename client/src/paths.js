@@ -1,5 +1,7 @@
 const Path = {
     Home: '/',
-    Logout:'/logout',
+    Logout: '/logout',
+    CarEdit: '/catalog/:carId/edit',
+    CarDelete: '/catalog/:carId/delete',
 };
-export default Path
+export default Path;

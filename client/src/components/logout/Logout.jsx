@@ -11,12 +11,20 @@ export default function Logout() {
     useEffect(() => {
 
         authService.logout()
+            // .then(() => {
+            //     logoutHandler();
 
-        logoutHandler()
+            //     navigate(Path.Home);
+            // })
+            // .catch(() => {
+                logoutHandler();
 
-        navigate(Path.Home)
+                navigate(Path.Home);
+            // })
 
-    }, []);
+
+
+    }, [logoutHandler, navigate]);
 
     return null
 }

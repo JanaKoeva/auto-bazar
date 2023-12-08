@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export default function usePersistentState(key,defaultValue){
+export default function usePersistentState(key, defaultValue){
 const[state, setState]=useState(()=>{
     const persistedState=localStorage.getItem(key);
 

@@ -1,21 +1,25 @@
-import { useContext, useEffect, useReducer, useRef, useState } from "react";
+import { useContext, useEffect, useReducer, useRef, useState, useMemo } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import * as carService from '../../services/carServices'
 import * as messageService from '../../services/messageServices'
 import styles from '../carDetails/CarDetails.module.css'
 import AuthContext from "../../context/authContext";
+import useForm from "../../hooks/useForm";
+import Path from "../../paths";
+import pathToUrl from "../../utils/pathUtils";
+
 
 
 
 const FORM_KEYS = {
-    image: 'image',
+    
     text: 'text',
     name: 'name'
 
 }
 
 const formInitialState = {
-    [FORM_KEYS.image]: '',
+ 
     [FORM_KEYS.text]: '',
     [FORM_KEYS.name]: '',
 
@@ -23,7 +27,7 @@ const formInitialState = {
 
 const reduser = (state, action) => {
     switch (action?.type) {
-        case "GET_ALL_GAMES":
+        case "GET_ALL_MESSAGES":
             return [...action.messages];
 
         case 'ADD_MESSAGE':
@@ -35,14 +39,15 @@ const reduser = (state, action) => {
 }
 
 export default function CarDetails() {
-    const { email, userId } = useContext(AuthContext)
-    const { carId } = useParams();
+    const { userId } = useContext(AuthContext)
     const [car, setCar] = useState({});
+    const { carId, username } = useParams();
     // const [messages, setMessages] = useState([]);
     const [messages, dispatch] = useReducer(reduser, [])
     const makeInputRef = useRef();
     const navigate = useNavigate();
     const [formValues, setFormValues] = useState(formInitialState);
+
 
     useEffect(() => {
         makeInputRef.current.focus();
@@ -58,31 +63,37 @@ export default function CarDetails() {
     //         ...state,
     //         e.target.value
     //     ]))
+
+    console.log(userId);
+    console.log(car._ownerId);
+
+
     // };
     const resetFormHandler = () => {
         setFormValues(formInitialState)
     }
     useEffect(() => {
         carService.getOne(carId)
-            .then(setCar);
+            .then((result) => { setCar(result); });
 
         messageService.getAll(carId)
             .then((result) => {
                 dispatch({
-                    type: 'GET_ALL_GAMES',
+                    type: 'GET_ALL_MESSAGES',
                     messages: result,
                 })
             })
     }, [carId]);
 
-    const postMesageSubmitHandler = async (e) => {
-        e.preventDefault();
-        const data = formValues;
+
+    const postMesageSubmitHandler = async (values) => {
+        // e.preventDefault();
+        const data = values;
         try {
             const newMessage = await messageService.create(carId, data.text);
-            console.log('Message:{newMessage}');
-            newMessage.owner = {};
-            console.log('Message2:{newMessage}');
+
+            newMessage.owner = { username };
+
             // setMessages(state => [...state, newMessage]);
             dispatch({
                 type: 'ADD_MESSAGE',
@@ -95,6 +106,20 @@ export default function CarDetails() {
             console.log(err);
         }
     }
+    const deleteBtnClickHandler = async () => {
+        const hasConfirmed = confirm(`Are you sure you want to delete ${car.model}`);
+
+        if (hasConfirmed) {
+            await carService.remove(carId)
+            navigate('/')
+        }
+    }
+
+
+    const initialValues = useMemo(() => ({
+        messages: ''
+    }), []);
+    const { values, onChange, onSubmit } = useForm(postMesageSubmitHandler, initialValues)
 
     return (
 
@@ -123,17 +148,19 @@ export default function CarDetails() {
                                 </div>
                                 <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6 txt1colon ">
                                     <div className="featurecontant">
+                                        <h2>{car.manufacturer}</h2>
                                         <h1>{car.model}</h1>
-                                        <h2>Manifacture: {car.manifactur}</h2>
                                         <p>Year :{car.year}</p>
                                         <p>Mileage:{car.mileage}</p>
-                                        <p>{car.text}</p>
+                                        <p>Description: {car.text}</p>
                                         <h2>Price:{car.price} &euro;</h2>
 
-                                        {userId === messages.ownerId && (
+                                        {userId && userId === car._ownerId && (
                                             <div style={{ display: 'flex', marginBottom: '1em' }}>
-                                                <button id="btnRM2"><Link to={'/catalog/:carId/edit'}>EDIT</Link></button>
-                                                <button id="btnRM2"><Link to={'/catalog/:carId/delete'}>DELETE</Link></button>
+                                                <button id="btnRM2">
+                                                    <Link  to={`/catalog/${carId}/edit`}> EDIT </Link>
+                                                    </button>
+                                                <button id="btnRM2" onClick={deleteBtnClickHandler} >DELETE</button>
                                             </div>
                                         )}
 
@@ -147,7 +174,7 @@ export default function CarDetails() {
                         </div>
                         <div className="rightside">
                             <div className="leftside">
-                                <form id="message" onSubmit={postMesageSubmitHandler}>
+                                <form id="message" onSubmit={onSubmit}>
                                     <h1 style={{
                                         paddingLeft: '11em',
                                         textAlign: 'center',
@@ -168,9 +195,9 @@ export default function CarDetails() {
                                                 marginLeft: '3em',
                                             }} name={FORM_KEYS.text} rows="4" cols="50" className="message-form" placeholder="Write a message..."
                                                 ref={makeInputRef}
-                                                value={formValues.text}
-                                                onChange={changeHandler} />
-                                            <button id="newmessage" onClick={postMesageSubmitHandler} type="button" className="btn btn-default btn-submit">Post Message</button>
+                                                value={values}
+                                                onChange={onChange} />
+                                            <button id="newmessage" onClick={onSubmit} type="button" className="btn btn-default btn-submit">Post Message</button>
                                         </div>
 
                                     </div>
@@ -189,7 +216,7 @@ export default function CarDetails() {
                         <>
                             <div key={_id} className="row costumrow">
                                 <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6 img2colon">
-                                    <img src="" alt="imageUrl" />
+                                    {/* <img src="" alt="imageUrl" /> */}
                                     <h3>{username}</h3>
                                 </div>
                                 <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6 txt1colon ">
@@ -212,7 +239,7 @@ export default function CarDetails() {
                         </>
                     ))}
                     {messages.length === 0 && (
-                        <h1 className="text-center"><span className="bdots">&bull;</span>N O  M E S S A G E S  Y E T<span className="bdots">&bull; </span><br /></h1>
+                        <h1 className="text-center"><span className="bdots">&bull;</span>N O    M E S S A G E S  Y E T<span className="bdots">&bull; </span><br /></h1>
 
                     )}
 

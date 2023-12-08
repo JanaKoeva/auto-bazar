@@ -22,16 +22,16 @@ export default function Header() {
                     <li>Give us a call : +359 888 888 888 </li>
                 </ul>
                 {!isAuthenticated && (
-                <ul className="logreg">
-                    <li><Link to="/login">Login </Link> </li>
-                    <li><Link to="/register"><span className="register">Register</span></Link></li>
-                </ul>)}
+                    <ul className="logreg">
+                        <li><Link to="/login">Login </Link> </li>
+                        <li><Link to="/register"><span className="register">Register</span></Link></li>
+                    </ul>)}
 
                 {isAuthenticated && (
-                <ul className="logreg">
-                    <li><Link to="dealer/id"><span className="register">Hello {username}!</span></Link> </li>
-                    <li><Link to={Path.Logout}><span className="register">Logout</span></Link></li>
-                </ul>)}
+                    <ul className="logreg">
+                        <li><Link to="dealer/id"><span className="register">Hello {username}!</span></Link> </li>
+                        <li><Link to={Path.Logout}><span className="register">Logout</span></Link></li>
+                    </ul>)}
 
             </div>
 
@@ -64,7 +64,10 @@ export default function Header() {
                             <Link to="/contact">CONTACT</Link>
 
                         </li>
-                        <li className={styles.button}><span className="postnewcar " ><Link to="/create" >POST NEW CAR</Link></span></li>
+                        {isAuthenticated && (
+                            <li className={styles.button}><span className="postnewcar " ><Link to="/create" >POST NEW CAR</Link></span></li>
+
+                        )}
                     </ul>
                 </div>
             </nav>

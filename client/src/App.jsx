@@ -12,29 +12,41 @@ import LoginPage from './components/login/LoginPage'
 import RegisterPage from './components/register/RegisterPage'
 import CarDetails from './components/carDetails/CarDetails'
 import Logout from './components/logout/Logout';
+import CarEdit from './components/carEdit/CarEdit';
+import ErrorBoundary from './components/ErrorBoundary';
+import AuthGuard from './components/guards/AuthGuard';
+import Page404 from './components/page404/Page404';
 
 
 
 function App() {
-  
+
   return (
-    <AuthProvider>
-      <>
-        <Header />
-        <Routes>
-          <Route path={Path.Home} element={<HomePage />} />
-          <Route path='/catalog' element={<CatalogPage />} />
-          <Route path='/create' element={<PostNewCar />} />
-          <Route path='/login' element={<LoginPage />} />
-          <Route path='/register' element={<RegisterPage />} />
-          <Route path={Path.Logout} element={<Logout />} />
-          <Route path='/catalog/:carId' element={<CarDetails />} />
+    <ErrorBoundary>
+      <AuthProvider>
+        <>
+          <Header />
+          <Routes>
+            <Route path={Path.Home} element={<HomePage />} />
+            <Route path='/catalog' element={<CatalogPage />} />
+            <Route path='/login' element={<LoginPage />} />
+            <Route path='/register' element={<RegisterPage />} />
+            <Route path='/catalog/:carId' element={<CarDetails />} />
+            <Route path='*' element={<Page404 />} />
 
 
-        </Routes>
-        <Footer />
-      </>
-    </AuthProvider>
+            <Route element={<AuthGuard />}>
+              <Route path='/create' element={< PostNewCar />} />
+              <Route path='/catalog/:carId/edit' element={<CarEdit />} />
+              <Route path={Path.Logout} element={<Logout />} />
+            </Route>
+
+          </Routes>
+          <Footer />
+        </>
+      </AuthProvider>
+    </ErrorBoundary>
+
   )
 }
 

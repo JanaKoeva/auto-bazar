@@ -8,7 +8,6 @@ export const getAll=async(carId)=>{
         load:`owner=_ownerId:users`
     });
     const result=await request.get(`${baseUrl}?${query}`);
-    console.log((result));
     return result;
     
 }

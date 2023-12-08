@@ -1,5 +1,16 @@
+import { useEffect, useState } from "react"
+import * as carService from '../../../services/carServices'
+import FutureCar from "./FutureCar";
 
 const FeaturesCars = () => {
+
+    const [futureCars, setFutureCars] = useState([]);
+
+    useEffect(() => {
+        carService.getFutureCars()
+            .then(result => setFutureCars(result))
+    }, [])
+
     return (
         <>
             <div className="allcontain">
@@ -8,12 +19,12 @@ const FeaturesCars = () => {
                 </div>
                 <div className="feturedimage">
                     <div className="row firstrow">
-                      
+                        {futureCars.map(car => <FutureCar  key={car._id} {...car} />)}
                     </div>
                 </div>
-                </div>
-            </>
-            )
+            </div>
+        </>
+    )
 }
 
 export default FeaturesCars;
