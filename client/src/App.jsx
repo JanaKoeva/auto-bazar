@@ -16,6 +16,8 @@ import CarEdit from './components/carEdit/CarEdit';
 import ErrorBoundary from './components/ErrorBoundary';
 import AuthGuard from './components/guards/AuthGuard';
 import Page404 from './components/page404/Page404';
+import ContactPage from './components/contactPage/ContactPage';
+import DealersPage from './components/dealersPage/DealersPage';
 
 
 
@@ -31,6 +33,8 @@ function App() {
             <Route path='/catalog' element={<CatalogPage />} />
             <Route path='/login' element={<LoginPage />} />
             <Route path='/register' element={<RegisterPage />} />
+            <Route path='/dealers' element={<DealersPage />} />
+            <Route path='/contact' element={<ContactPage />} />
             <Route path='/catalog/:carId' element={<CarDetails />} />
             <Route path='*' element={<Page404 />} />
 

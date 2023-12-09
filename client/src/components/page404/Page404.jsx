@@ -1,22 +1,39 @@
 
 export default function Page404() {
-  
+
 
     return (
-      <div className='allcontain'>
-            <div className="newslettercontent">
+        <div className='allcontain' style={
+            {
+                minHeight: '100vh',
+
+            }
+        }>
+            <div className="newslettercontent"style={{
+                            
+                            paddingTop:"10em"
+                        }}>
                 <div className="leftside">
                     <img id="image_border" src="image/border.png" alt="border" />
                     <div className="contact-form">
-                        <h1>404</h1>
-                        <div className="form-group group-coustume">
-                            <p><span>PAGE NOT FOUND</span></p>
+
+                        <div className="form-group group-coustume" style={{
+                            position:"relative",
+                            justifyContent:"center",
+                            paddingTop:"12em",
+                            paddingLeft:'5em',
+                        }}>
+                            <h1>404</h1>
+                            <h2><span>PAGE NOT FOUND</span></h2>
                         </div>
                     </div>
                 </div>
-                <div className="google-maps">
-                    <div className="rightside">
-                        <img className="newsimage" src="image/newsletter.jpg" alt="newsletter" />
+                <div className="google-maps" >
+                    <div className="rightside"style={{
+                            
+                            paddingTop:"10em"
+                        }}>
+                        <img className="newsimage" src="https://img.freepik.com/free-vector/404-error-background-with-car-wheel-flat-style_23-2147761283.jpg?w=2000" alt="newsletter" />
 
                     </div>
 
@@ -25,5 +42,4 @@ export default function Page404() {
 
         </div>
     )
-  }
-  
+}

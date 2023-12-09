@@ -14,7 +14,15 @@ export const getAll = async () => {
     const result = await request.get(baseUrl);
     return result;
 }
-
+export const getAllCarsWithOwners= async () => {
+    const query=new URLSearchParams({
+        // sortBy:`price `,
+      
+    })
+    const result = await request.request.get(`${baseUrl}?${query}`);
+    console.log(result);
+    return result;
+}
 
 
 export const getOne = async (carId) => {

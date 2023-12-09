@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useContext, useEffect, useReducer, useRef, useState, useMemo } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import * as carService from '../../services/carServices'
@@ -5,10 +6,6 @@ import * as messageService from '../../services/messageServices'
 import styles from '../carDetails/CarDetails.module.css'
 import AuthContext from "../../context/authContext";
 import useForm from "../../hooks/useForm";
-import Path from "../../paths";
-import pathToUrl from "../../utils/pathUtils";
-
-
 
 
 const FORM_KEYS = {
@@ -126,7 +123,7 @@ export default function CarDetails() {
         <div className={styles.details}>
             <>
                 <div className="feturedsection">
-                    <h1 className="text-center"><span className="bdots">&bull;</span>F E A T U R E S<span className="carstxt">C A R S</span>&bull;</h1>
+                    <h1 className="text-center"><span className="bdots">&bull;</span>C A R    D E T A I L S<span className="carstxt">C A R S</span>&bull;</h1>
 
                     <div className="newslettercontent" style={{
 

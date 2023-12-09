@@ -57,7 +57,7 @@ export default function Header() {
 
                         </li>
                         <li className="dropdown">
-                            <Link to="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">DEALERS</Link>
+                            <Link to="/dealers" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">DEALERS</Link>
 
                         </li>
                         <li>
