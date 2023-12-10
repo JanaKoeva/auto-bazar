@@ -5,7 +5,7 @@
 }
 
 .allcontain.newslettercontent {
-    margin: 20em auto;
+    margin: 10em auto;
 }
 
 .allcontain button {
@@ -28,8 +28,17 @@
     color: #fff;
 }
 .allcontain form {
-   padding-top: 12em !important;
+   padding-top: 17em !important;
+   padding-left: 20em;
     
+}
+.allcontain h1{
+    margin-top: 5em;
+    margin-left: 7em;
+}
+.allcontain p{
+    padding-left: 20em;
+    padding-top: 10em;
 }
 
 .allcontain a {

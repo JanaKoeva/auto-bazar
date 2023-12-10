@@ -30,9 +30,10 @@ export default function RegisterPage(){
                     <img id="image_border" src="image/border.png" alt="border" />
                     <form onSubmit={onSubmit}>
                     <div className="contact-form">
-                        <h1>Register</h1>
+                        <h1  style={{paddingTop: "2em",paddingLeft:'8em'}}
+                        >Register</h1>
                         <div className="form-group group-coustume" 
-                        style={{paddingTop: "8em"}
+                        style={{paddingTop: "8em",paddingLeft:'20em'}
                         }>
                             <input 
                             name={RegisterFormKeys.Name}

@@ -1,0 +1,143 @@
+.allcontain{
+    .details {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        gap: 15em;
+        max-width: 1500px;
+        margin-left: 10em;
+    }
+    
+    .feturedsection {
+        display: block;
+        flex: 1 1 auto
+    }
+    
+    #message h1{
+       
+            padding-left: 11em;
+            text-align: center;
+    
+    }
+    .details .newslettercontent {
+        display: flex;
+        gap: 10em;
+        /* justify-content: space-around; */
+    }
+    
+    .details .img2colon {
+        flex: 1 1 auto;
+        margin-left: 10em;
+        /* display: flex;
+        flex-direction: row; */
+    }
+    
+    .details .img2colon h1 {
+    
+        width: 30em;
+    }
+    
+    .details #post {
+        padding-left: 10em;
+        font-family: "OpenSans-Light";
+        font-size: 41px;
+        /* padding-top: 100px;
+        padding-bottom: 50px; */
+        color: #747475;
+    }
+    
+    .details leftside {
+        max-width: 50%;
+        min-height: 20em;
+        max-width: 50%;
+    
+    }
+    .edit{ 
+            display:flex;
+            margin-bottom: 1em;
+    }
+    
+    .allcontain .edit button {
+        background: none;
+        background-color: none;
+        border: 2px solid #C59E47;
+        font-family: 'BebasNeue Regular';
+        margin-left: 60px;
+        font-size: 16.99px;
+        color: #313943;
+        margin-top: 0px;
+        padding-left: 19px;
+        padding-right: 19px;
+        padding-top: -2px;
+        padding-bottom: -2px;
+    
+    }
+    
+    details .button:hover {
+        background-color: #C59E47;
+        color: #fff;
+    }
+    
+    .details img #border {
+        transform: rotate(90deg);
+    }
+    
+    details.rightside {
+        margin-left: 30em;
+        max-width: 50%;
+    
+    }
+    
+    .details #post {
+    
+        padding-left: 50em;
+    
+    }
+    
+    .details #newmessage {
+        background: none;
+        background-color: none;
+        border: 2px solid #C59E47;
+        font-family: 'BebasNeue Regular';
+        margin-left: 60px;
+        font-size: 16.99px;
+        color: #313943;
+        margin-top: 0px;
+        padding-left: 30px !important;
+        padding-right: 19px;
+        padding-top: -2px;
+        padding-bottom: -2px;
+    
+    }
+    .newslettercontent{
+            width: 100%;
+            height: 50em;
+    }
+    .contact-form img{
+            transform: rotate(90deg);
+            width: 600px;
+            height:500px;
+            padding: 0em 5em;
+            margin: 5em 1em;
+    
+    }
+    .form-group group-coustume{
+        padding: 3em 19em ;
+    }
+    .message-form{
+        
+            padding: 2em 0  2em 2em ;
+            text-align: center;
+            margin-left: 3em;
+    }
+    .featurecontant1{
+            width: 100%;
+            height: 10em;
+            border: 2px solid #C59E47;
+            margin-top: 1%;
+            margin-right: auto;
+            margin-left: auto;
+    
+    }
+    
+}

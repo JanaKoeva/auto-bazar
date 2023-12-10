@@ -31,9 +31,22 @@ export const getOne = async (carId) => {
 }
 
 
+export const getFutureCars = async () => {
+    const query=new URLSearchParams({
+        sortBy:'',
+        offset: 0,
+        pageSize: 2,
+    })
+    const result = await request.get(`${baseUrl}?${query}`);
+    console.log(result);
+    return result;  
+}
+
+
+
 export const getLatest = async () => {
     const query=new URLSearchParams({
-        // sortBy:`price `,
+        // sortBy:'make',
         offset: 0,
         pageSize: 4,
       
@@ -51,17 +64,6 @@ export const sortAlfabetical = async () => {
     })
 
     
-    const result = await request.get(`${baseUrl}?${query}`);
-    console.log(result);
-    return result;  
-}
-
-export const getFutureCars = async () => {
-    const query=new URLSearchParams({
-        sortBy:`model`,
-        offset: 0,
-        pageSize: 2,
-    })
     const result = await request.get(`${baseUrl}?${query}`);
     console.log(result);
     return result;  

@@ -36,7 +36,7 @@ const CatalogPage = () => {
     console.log(cars);
     return (
         <>
-            <div className="allcontain">
+            <div className={styles.allcontain}>
             
                 <div className="feturedsection">
                     <h1 className="text-center"><span className="bdots">&bull;</span>C A T A L O G<span className="carstxt">C A R S</span>&bull;</h1>

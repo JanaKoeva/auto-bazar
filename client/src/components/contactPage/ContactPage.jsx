@@ -3,52 +3,52 @@ import { useEffect } from 'react';
 export default function ContactPage() {
 
     const MyMapComponent = () => {
-        const myCenter = { lat: 41.567197, lng: 14.681526 };
+    //     const myCenter = { lat: 41.567197, lng: 14.681526 };
 
-        useEffect(() => {
-            const initialize = () => {
-                const mapProp = {
-                    center: myCenter,
-                    zoom: 16,
-                    mapTypeId: 'roadmap',
-                };
+    //     useEffect(() => {
+    //         const initialize = () => {
+    //             const mapProp = {
+    //                 center: myCenter,
+    //                 zoom: 16,
+    //                 mapTypeId: 'roadmap',
+    //             };
 
-                const map = new window.google.maps.Map(document.getElementById('googleMap'), mapProp);
+    //             const map = new window.google.maps.Map(document.getElementById('googleMap'), mapProp);
 
-                const marker = new window.google.maps.Marker({
-                    position: myCenter,
-                });
+    //             const marker = new window.google.maps.Marker({
+    //                 position: myCenter,
+    //             });
 
-                marker.setMap(map);
-            };
+    //             marker.setMap(map);
+    //         };
 
-            const resizeMap = () => {
-                const newHeight = document.getElementById('image_border').clientHeight;
-                document.getElementById('googleMap').style.height = `${newHeight}px`;
-            };
+    //         const resizeMap = () => {
+    //             const newHeight = document.getElementById('image_border').clientHeight;
+    //             document.getElementById('googleMap').style.height = `${newHeight}px`;
+    //         };
 
-            resizeMap(); // Initial resize
+    //         resizeMap(); // Initial resize
 
-            window.addEventListener('resize', resizeMap);
-            window.addEventListener('load', () => {
-                resizeMap();
-                initialize();
-            });
+    //         window.addEventListener('resize', resizeMap);
+    //         window.addEventListener('load', () => {
+    //             resizeMap();
+    //             initialize();
+    //         });
 
-            // Cleanup event listeners on component unmount
-            return () => {
-                window.removeEventListener('resize', resizeMap);
-                window.removeEventListener('load', () => {
-                    resizeMap();
-                    initialize();
-                });
-            };
-        }, [myCenter]);
-    }
+    //         // Cleanup event listeners on component unmount
+    //         return () => {
+    //             window.removeEventListener('resize', resizeMap);
+    //             window.removeEventListener('load', () => {
+    //                 resizeMap();
+    //                 initialize();
+    //             });
+    //         };
+    //     }, [myCenter]);
+     }
         return (
             <div className='allcontain' style={{
                 minHeight:'100vh',
-                paddingTop:'20em',
+                paddingTop:'5em',
             }}>
                 <div className="newslettercontent">
                     <div className="leftside">
@@ -59,17 +59,20 @@ export default function ContactPage() {
                             <div className="form-group group-coustume" >
                                 <h1 style={{
                                     paddingTop:'3em',
-                                    paddingBottom:'2em'
+                                    paddingBottom:'2em',
+                                    paddingLeft:'6em'
                                 }}>Contact Us:</h1>
                                 <div style={{
-                                    fontSize:'18px'
+                                    fontSize:'18px',
+                                    paddingLeft:'8em'
                                 }}>
-                                <p> 152,Sveta Troitza Str.,Stara Zagora</p>
-                                <p>Tel : +359 0888 888 888</p>
+                                <p> 152,Sveta Troitza Str.,
+                                    Stara Zagora</p>
+                                <p>Tel : +359 888 888 888</p>
                                 <p>Email : autobazar@abv.bg </p>
                                 </div>
 
-                                <p style={{paddingTop:'5em',
+                                <p style={{paddingTop:'5em',paddingLeft:'10em',
                                 fontSize:'15px'
                                 }}>Become our member <a href="/login">Login</a></p>
 
