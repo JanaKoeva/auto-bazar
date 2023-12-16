@@ -1414,7 +1414,7 @@
             "mileage": "98000",
             "location": "Stara Zagora",
             "price": "19 800",
-            "image": "../../image/alfa.jpg",
+            "image": "../../image/car6.jpg",
             "text": "Alfa Romeo GT was voted the world's most beautiful coupe in the annual. When passion meets courage, nothing is impossible. Inspired by a legendary Alfa Romeo icon, the 33 Stradale ushers in a bold era of bravery, sportiness, and power. An astonishing Fuoriserie: 33 units available reflecting the creative minds of its owners, who have been granted the freedom to customise their supercars by actively participating in the decision-making process, working hand in hand with our “Bottega” of talented craftsmen.",
             "year": "1990",
             "_id": "304bca9e-c713-4e72-b686-6b67ff7bf112",
@@ -1427,7 +1427,7 @@
                 "mileage": "123456",
                 "location": "Stara Zagora",
                 "price": "1200",
-                "image": "../../image/golf.png",
+                "image": "../../image/car7.jpg",
                 "text": "The Volkswagen Golf n is a compact car/small family car.  ",
                 "year": "1990",
                 "_id": "304bca9e-c713-4e72-b686-6b67ff7bf112",
@@ -1452,6 +1452,11 @@
                 carId: "304bca9e-c713-4e72-b686-6b67ff7bf112",
                 _createdOn: 1613551388703,
                 _id: "0a272c58-b7ea-4e09-a000-7ec988248f56"
+            }
+        },
+        dealers:{
+            "304bca9e-c713-4e72-b686-6b67ff7bf312":{
+
             }
         },
         records: {

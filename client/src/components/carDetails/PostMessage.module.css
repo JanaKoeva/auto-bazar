@@ -1,0 +1,30 @@
+.contactForm img {
+    transform: rotate(90deg);
+    width: 600px;
+    height: 500px;
+    padding: 0em 5em;
+    margin: 5em 1em;
+
+}
+
+.details {
+    display: block;
+    margin-left: 20em;
+}
+
+.details textarea {
+    max-width: 40em;
+    margin-left: 30em;
+    margin-top: 3em;
+}
+.details button{
+    margin-top: 3em;
+    margin-left: 27em;
+}
+.details h1{
+    margin-left: 8em;
+}
+details .button:hover {
+    background-color: #C59E47;
+    color: #fff;
+}

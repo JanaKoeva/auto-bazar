@@ -11,7 +11,7 @@ export default function Page404() {
         }>
             <div className="newslettercontent"style={{
                             
-                            paddingTop:"10em"
+                            paddingTop:"5em"
                         }}>
                 <div className="leftside">
                     <img id="image_border" src="image/border.png" alt="border" />
@@ -20,8 +20,8 @@ export default function Page404() {
                         <div className="form-group group-coustume" style={{
                             position:"relative",
                             justifyContent:"center",
-                            paddingTop:"12em",
-                            paddingLeft:'5em',
+                            paddingTop:"30em",
+                            paddingLeft:'15em',
                         }}>
                             <h1>404</h1>
                             <h2><span>PAGE NOT FOUND</span></h2>

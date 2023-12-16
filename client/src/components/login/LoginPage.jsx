@@ -2,6 +2,7 @@ import style from '../login/LoginPage.module.css';
 import useForm from '../../hooks/useForm';
 import { useContext } from 'react';
 import AuthContext from '../../context/authContext';
+import { Link } from 'react-router-dom';
 
 const LoginFormKyes = {
     EMAIL: 'email',
@@ -47,7 +48,7 @@ export default function LoginPage() {
                                 <br />
                                 <br />
                             </form>
-                            <p>Don’t have an account? <a href="/register">Register</a></p>
+                            <p>Don’t have an account? <Link to="/register"><strong>Register</strong></Link></p>
 
                         </div>
                     </div>

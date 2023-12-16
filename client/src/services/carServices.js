@@ -19,7 +19,7 @@ export const getAllCarsWithOwners= async () => {
         // sortBy:`price `,
       
     })
-    const result = await request.request.get(`${baseUrl}?${query}`);
+    const result = await request.get(`${baseUrl}?${query}`);
     console.log(result);
     return result;
 }
@@ -33,7 +33,7 @@ export const getOne = async (carId) => {
 
 export const getFutureCars = async () => {
     const query=new URLSearchParams({
-        sortBy:'',
+        sortBy:'model',
         offset: 0,
         pageSize: 2,
     })
@@ -41,7 +41,6 @@ export const getFutureCars = async () => {
     console.log(result);
     return result;  
 }
-
 
 
 export const getLatest = async () => {
@@ -75,15 +74,13 @@ export const create = async (data) => {
 
     return result;
 }
+
 export const edit = async (carId, data) => {
     console.log(data);
     const result = await request.put(`${baseUrl}/${carId}`, data)
 console.log(result);
     return result;
 }
-
-
-
 
 export const remove = async (carId) => {
     await request.del(`${baseUrl}/${carId}`)

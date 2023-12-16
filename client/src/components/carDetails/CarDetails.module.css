@@ -1,0 +1,152 @@
+
+.details {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    max-width: 1200px;
+    margin-left: 5em;
+}
+.newslettercontent {
+    min-width: 100%;
+    display: flex;
+    margin-bottom: 5em;
+ 
+}
+.details .rightside {
+   
+    display: block;
+    position: relative;
+    top: 30;
+    flex: 1 1 auto;
+    left: 0;
+    z-index: 1;
+} 
+
+.feturedsection {
+    display: block;
+    flex: 1 1 auto
+}
+
+#message h1{
+   background-color: red;
+        padding-left: 15em;
+        text-align: center;
+
+}
+.details .newslettercontent {
+    display: flex;
+    gap: 2em;
+   
+}
+
+.details .img2colon {
+    flex: 1 1 auto;
+    margin-left: 10em;
+    flex-direction: row; 
+}
+
+.details .img2colon h1 {
+
+    width: 30em;
+}
+
+.details #post {
+    padding-left: 10em;
+    padding-top: 0em;
+    font-family: "OpenSans-Light";
+    font-size: 41px;
+
+    color: #747475;
+}
+.details .message h1{
+    padding-bottom: 5em;
+}
+
+.details leftside {
+    display: block;
+    flex: 0 0 auto
+    /* max-width: 45%;
+    min-height: 20em;
+    max-width: 50%; */
+
+}
+.edit{ 
+        display:flex;
+        margin-bottom: 1em;
+}
+
+.details button {
+    background: none;
+    background-color: none;
+    border: 2px solid #C59E47;
+    font-family: 'BebasNeue Regular';
+    margin-left: 60px;
+    font-size: 16.99px;
+    color: #313943;
+    margin-top: 0px;
+    padding-left: 19px;
+    padding-right: 19px;
+    padding-top: -2px;
+    padding-bottom: -2px;
+
+}
+
+details.button:hover {
+    background-color: #C59E47;
+    color: #fff;
+}
+
+details.rightside {
+    margin-left: 30em;
+    max-width: 50%;
+
+}
+
+.details #post {
+
+    padding-left: 50em;
+
+}
+
+.details button#newmessage {
+    background: none;
+    background-color: none;
+    border: 2px solid #C59E47;
+    font-family: 'BebasNeue Regular';
+    margin-left: 60px;
+    font-size: 16.99px;
+    color: #313943;
+    margin-top: 5px;
+    padding-left: 30px !important;
+    padding-right: 19px;
+    padding-top: -2px;
+    padding-bottom: -2px;
+
+}
+.newslettercontent{
+        width: 80%;
+        height: 50em;
+}
+
+.formGroup groupCoustume{
+    padding: 3em 19em ;
+}
+.messageForm{
+    
+        padding: 2em 0  2em 2em ;
+        text-align: center;
+        margin-left: 3em;
+}
+.featurecontant1{
+        width: 100%;
+        height: 10em;
+        border: 2px solid #C59E47;
+        margin-top: 1%;
+        margin-right: auto;
+        margin-left: auto;
+
+}
+.col-lg-6 {
+    width: 50%;
+}  
+

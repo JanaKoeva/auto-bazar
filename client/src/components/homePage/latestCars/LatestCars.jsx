@@ -21,8 +21,8 @@ export default function LatestCars() {
 			<br />
 			<br />
 			<div className="grid">
-				<div className="row" id="car._id">
-					{latestCars.map(car => <LatestCar {...car}/>)}
+				<div className="row" key="car._id">
+					{latestCars.map(car => <LatestCar  {...car}/>)}
 					
 						{!latestCars.length&&<p>No cars yet</p>}
 					

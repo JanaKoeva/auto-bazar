@@ -21,9 +21,11 @@ import DealersPage from './components/dealersPage/DealersPage';
 
 
 
+
 function App() {
 
   return (
+   
     <ErrorBoundary>
       <AuthProvider>
         <>
@@ -36,11 +38,11 @@ function App() {
             <Route path='/dealers' element={<DealersPage />} />
             <Route path='/contact' element={<ContactPage />} />
             <Route path='/catalog/:carId' element={<CarDetails />} />
-            <Route path='*' element={<Page404 />} />
+            <Route path='*/*' element={<Page404/>} />
 
 
             <Route element={<AuthGuard />}>
-              <Route path='/create' element={< PostNewCar />} />
+              <Route path='/create' element={<PostNewCar />} />
               <Route path='/catalog/:carId/edit' element={<CarEdit />} />
               <Route path={Path.Logout} element={<Logout />} />
             </Route>
@@ -50,7 +52,7 @@ function App() {
         </>
       </AuthProvider>
     </ErrorBoundary>
-
+   
   )
 }
 

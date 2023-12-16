@@ -30,12 +30,9 @@ export default function FutureCar({
 
     return (
 
-        <div className={styles.main}>
+        <div className={styles}>
             <div className="col-lg-6 costumcol colborder1">
-                <div className="row costumrow1" style={{
-                            justifyContent: 'space-between',
-                            alignItems:'center'
-                    }}>
+                <div className="row costumrow" >
                     <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6 img1colon">
                         <img src={image} alt="porsche" />
                     </div>

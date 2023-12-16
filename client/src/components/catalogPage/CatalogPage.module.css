@@ -1,5 +1,7 @@
 .CostumcolColborder1{
-
+._rowCostumrow_1m8ur_39{
+    display: block !important;
+}
     @media(min-width:1200px) {
         /* .row firstrow {
             max-width: 1400px;
@@ -17,20 +19,20 @@
     }
    
 }
-.rowCostumrow {
+/* .rowCostumrow {
     min-width: 1400px;
     display: flex;
     flex-direction: column;
-    /* flex: 0 1 auto; */
+    flex: 0 1 auto;
     justify-content:space-around;
     
    
-}
+} */
   
-.col-lg-6 costumcol colborder2{
+/* .col-lg-6 costumcol colborder2{
     flex: 1 1 auto;
     justify-content: space-between;
     margin: 0 2em;
     display: block;
     background-color: red;
-}
+} */

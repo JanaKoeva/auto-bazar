@@ -1,5 +1,5 @@
-.allcontain{
-    .details {
+.allcontain {
+    margin-top: 0;
         display: flex;
         flex-direction: column;
         min-height: 100vh;
@@ -8,23 +8,24 @@
         margin-left: 10em;
     }
     
-    .feturedsection {
+    .contact .feturedsection {
         display: block;
         flex: 1 1 auto
     }
     
-    #message h1{
-       
-            padding-left: 11em;
+    .contact > form >h1{
+            padding-left: 15em;
             text-align: center;
-    
     }
-    .details .newslettercontent {
+    /* .contact  .newslettercontent {
         display: flex;
         gap: 10em;
-        /* justify-content: space-around; */
+        justify-content: space-around;
+    } */
+    .formGroup {
+        margin-left:5em ;
     }
-    
+
     .details .img2colon {
         flex: 1 1 auto;
         margin-left: 10em;
@@ -78,8 +79,8 @@
         color: #fff;
     }
     
-    .details img #border {
-        transform: rotate(90deg);
+    #border {
+    min-height: 35%;
     }
     
     details.rightside {
@@ -124,13 +125,13 @@
     .form-group group-coustume{
         padding: 3em 19em ;
     }
-    .message-form{
+    .contact .messageForm{
         
-            padding: 2em 0  2em 2em ;
+            padding: 0em 0  2em 2em ;
             text-align: center;
             margin-left: 3em;
     }
-    .featurecontant1{
+    .contact .featurecontant1{
             width: 100%;
             height: 10em;
             border: 2px solid #C59E47;
@@ -140,4 +141,3 @@
     
     }
     
-}

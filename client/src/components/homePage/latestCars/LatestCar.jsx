@@ -25,7 +25,7 @@ export default function LatestCar({image,
 								<button><Link to={`/catalog/${_id}`}>READ MORE</Link></button><br/>
 								<div className="wishtxt">
 									<p className="paragraph1"> Add to Wishlist <span className="glyphicon glyphicon-heart"></span> </p>
-								<p className="paragraph2">Compare <span className="icon"><img src="image/compicon.png" alt="compicon"/></span></p>
+								<p className="paragraph2"><Link to={`/catalog/${_id}`}>Message </Link><span className="icon"><img src="image/compicon.png" alt="compicon"/></span></p>
 								</div>
 							</div>
 							<div className="stars2">

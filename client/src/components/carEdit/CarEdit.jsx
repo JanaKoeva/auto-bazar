@@ -1,4 +1,4 @@
-import styles from '../postNewCar/PostNewCar.module.css'
+import styles from '../carEdit/stylesCarEdit.css'
 import * as carService from '../../services/carServices';
 import { useEffect, useState, } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -69,13 +69,20 @@ export default function EditCar() {
     // console.log(formValues);
 
     return (
-        <div className={styles.allcontain}>
-            <div className='contact'>
-                <div className="newslettercontent">
+        <div className='allcontain'>
+            <div className={styles.contact}>
+                <div style={
+                    {marginTop:0,
+                }} className="newslettercontent">
                     <div className="leftside">
                         <form onSubmit={editCarSubmitHandler}>
-                            <h1>Edit my Car</h1>
-                            <img className="image" id="image_border" src="../../image/border.png" alt="border" />
+                            <h1 style={{
+                                paddingLeft:'5em',
+                            }}>Edit my Car</h1>
+                            <img style={{
+                                minHeight:'550px',
+                                zIndex:'10000'
+                            }} className="image" id="image_border" src="../../image/border.png" alt="border" />
                             <div className="contact-form">
 
                                 <div className="form-group group-coustume">
@@ -119,7 +126,21 @@ export default function EditCar() {
                                         name={FORM_KEYS.text} rows="4" cols="50" className="message-form" placeholder="Description-Tell us a bit about your car e.g. color, condition, previous owners"
                                         value={editedCar.text}
                                         onChange={changeHandler} />
-                                    <button  type="submit"  className="btn btn-default btn-submit">Post Car</button>
+                                    <button style={{
+        background: 'none',
+        backgroundColor: 'none',
+        border: '2px solid #C59E47',
+        fontFamily: 'BebasNeue Regular',
+        marginLeft:' 60px',
+        fontSize: '16.99px',
+        color:' #313943',
+        marginTop: '0px',
+        paddingLeft: '19px',
+        paddingRight:' 19px',
+        paddingTop: '-2px',
+        paddingBottom: '-2px',
+    
+    }} type="submit"  className="btn btn-default btn-submit">Edit Car</button>
                                 </div>
 
                             </div>
@@ -130,7 +151,13 @@ export default function EditCar() {
                             {/* {FORM_KEYS.image != "" &&
 						(<img className="newsimage" src={formValues.image} alt="newsletter" />)}
 						{FORM_KEYS.image == null && */}
-                            <img className="newsimage" src={editedCar.image} alt="newsletter" />
+                            <img style={{
+                                marginTop:'10em',
+                                boxSizing:'border-box',
+                                width:'500px',
+                                height:'500px',
+                                zIndex:'1000'
+                            }} className="newsimage" src={editedCar.image} alt="newsletter" />
                             {/* } */}
 
 

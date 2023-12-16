@@ -1,30 +1,32 @@
 .allcontain {
     min-height: 100vh;
-    margin-top: 10em;
+    margin-top: 5em;
     max-width: 1400px;
 }
+
 .allcontain button {
     background: none;
     background-color: none;
     border: 2px solid #C59E47;
     font-family: 'BebasNeue Regular';
     margin-left: 60px;
-     font-size: 16.99px;
-     color: #313943;
-     margin-top:0px;
-     padding-left: 19px;
-     padding-right: 19px;
-     padding-top: -2px;
-     padding-bottom:-2px;
- 
+    font-size: 16.99px;
+    color: #313943;
+    margin-top: 0px;
+    padding-left: 19px;
+    padding-right: 19px;
+    padding-top: -2px;
+    padding-bottom: -2px;
+
 }
-.allcontain button:hover{
+
+.allcontain button:hover {
     background-color: #C59E47;
     color: #fff;
 }
 
-.allcontain .contact-form > div>*{
-    padding-left: 30em!important;
-   padding-top: 12em!important;
-   max-width: 600px;
+.allcontain .contact-form>div>* {
+    padding-left: 10% !important;
+    padding-top: 12em !important;
+    max-width: 600px;
 }

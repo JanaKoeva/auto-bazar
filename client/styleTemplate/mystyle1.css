@@ -1,5 +1,4 @@
 
-
 .allcontain{
 	max-width: 1366px;
 	margin-left: auto;
@@ -331,7 +330,7 @@ float: right;
 
 }
 .carousel-caption{
-	z-index: 999;
+	z-index: 5009;
 }
 .carousel-caption>h2{
 	text-align: left;
@@ -345,7 +344,7 @@ float: right;
 	src:url(../source/fonts/OpenSans-Regular.ttf) format("truetype");
 }
 .carousel-caption>h2>p{
-font-family: 'OpenSans Regular';
+font-family:'OpenSans Regular';
 font-size: 15.88pt;
 }
 .carousel-caption {
@@ -1424,37 +1423,15 @@ left: 0%;
  		font-size: 26px;
  	}
  }
-@media screen and (max-width:850px){
+@media screen and (max-width:1200px){
 	.leftside>h1{
 		font-size: 16px;
-		top:5%;
+		top:25%;
 	}
 	.leftside>p{
 		font-size: 14px;
-		top:0%;
-		width: 30%;
-
-	}
-	.rightside>input{
-		font-size: 20px;
-	}
-	.rightside>button{
-	 	font-size: 27px;
-		letter-spacing: 3px;
-	}
-}
-@media screen and (max-width:1300px){
-	.leftside>h1{
-		font-size: 16px;
 		top:38%;
-		font-family: "OpenSans Regular";
-		font-weight: bold;
-	}
-	.leftside>p{
-		font-size: 14px;
-		top:40%;
 		width: 30%;
-
 	}
 	.rightside>input{
 		font-size: 20px;
@@ -1464,7 +1441,6 @@ left: 0%;
 		letter-spacing: 3px;
 	}
 }
-
 /*-------------------------------------End Newsletter Section ----------------*/	
 /*-------------------------------------Bottom Menu -----------------------------------------------*/
  .bottommenu{
@@ -1556,10 +1532,10 @@ left: 0%;
   		padding-left: 20px;
 
   	}
-  	/* .bottomlinks>li>a{
-  		 */
+  	.bottomlinks>li>a{
+		border: 0px;
 
-  	/* } */
+  	}
   	.bottomlinks>li{
   	float: none;
   text-align: center;
@@ -1587,10 +1563,10 @@ left: 0%;
   		padding-left: 20px;
 
   	}
-  	/* .bottomlinks>li>a{
+  	.bottomlinks>li>a{
   		
-
-  	} */
+		border: 0px;
+  	}
   	.bottomlinks>li{
   	float: none;
   	text-align: center;
